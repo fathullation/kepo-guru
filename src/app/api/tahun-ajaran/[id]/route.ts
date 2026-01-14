@@ -45,7 +45,7 @@ export async function DELETE(
   const { error } = await supabase
     .from('tahun_ajaran')
     .delete()
-    .eq('id', params.id);
+    .eq('id', params);
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
   return NextResponse.json({ message: 'Berhasil dihapus' });
