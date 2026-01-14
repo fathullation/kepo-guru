@@ -6,9 +6,10 @@ export async function PATCH(
   request: Request,
   { params }: { params: { id: string } }
 ) {
+    
   const body = await request.json();
   const { type } = body; // Kita pakai parameter 'type' untuk membedakan aksi
-  const id = params.id;
+  const id = params;
 
   // SKENARIO 1: Aktivasi Tahun Ajaran (Hanya 1 yang boleh aktif)
   if (type === 'activate') {
